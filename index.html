@@ -59,5 +59,22 @@
 </head>
 <body>
   <h1 class="heading">Personality Prediction Project</h1> 
+  <form action="/submit" method="POST" class="form">
+    GENDER: <br>
+    <input type="text" name="gender" placeholder="Male/Female" required><br>
+    AGE: <br>
+    <input type="text" name="age" placeholder="Enter your age" required><br>
+    OPENNESS: <br>
+    <input type="text" name="openness" placeholder="Rate yourself from 1-8" required><br>
+    NEUROTICISM: <br>
+    <input type="text" name="neuroticism" placeholder="Rate yourself from 1-8" required><br>
+    CONSCIENTIOUSNESS: <br>
+    <input type="text" name="conscientiousness" placeholder="Rate yourself from 1-8" required><br>
+    AGREEABLENESS: <br>
+    <input type="text" name="agreeableness" placeholder="Rate yourself from 1-8" required><br>
+    EXTRAVERSION: <br>
+    <input type="text" name="extraversion" placeholder="Rate yourself from 1-8" required><br>
+    <input type="submit" name="submit" value="Predict" class="button">
+  </form>
 </body>
 </html>
