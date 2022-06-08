@@ -3,8 +3,7 @@ from flask import Flask, render_template, request
 from sklearn.preprocessing import StandardScaler
 import joblib
 app = Flask(__name__)
-model1 = joblib.load("train_model1.pkl")
-model2 = joblib.load("train_model2.pkl")
+model = joblib.load("train_model.pkl")
 scaler = StandardScaler()
 
 
@@ -30,9 +29,7 @@ def result():
         result = np.array([gender_no, age, openness, neuroticism,
                           conscientiousness, agreeableness, extraversion], ndmin=2)
         final = scaler.fit_transform(result)
-        personality1 = str(model1.predict(final)[0])
-        personality2 = str(model2.predict(final)[0])
-        if   :
+        personality = str(model.predict(final))
         return render_template("submit.html", answer=personality)
 
 
