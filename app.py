@@ -5,10 +5,7 @@ from flask import Flask, render_template, request
 from sklearn.preprocessing import StandardScaler
 import joblib
 app = Flask(__name__)
-import os
-cwd = os.getcwd()
-mod = pathlib.Path('train_model.pkl')
-model = joblib.load(mod)
+model = joblib.load('train_model.pkl')
 scaler = StandardScaler()
 
 
