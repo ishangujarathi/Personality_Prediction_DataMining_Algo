@@ -1,80 +1,109 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title> Personality Prediction Project</title>
   <style>
-  html
-  {
-    min-width: 100%;
-    min-height: 100%;
-    background-size: cover;
-    background-color: black;
-  }
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
-  input
-  {
-    margin-top: 2%;
-    margin-bottom: 7%;
-    padding: 2vh;
-    width: 70%;
-    background-color:black;
-    color: white;
-    opacity: 0.8;
-    border-radius: 50px;
-    box-shadow: 3px 3px 8px grey;
-    font-size: large;
-  }
-  .heading
-  {
-    color: white;
-    text-shadow: 2px 2px 5px white;
-    text-align: center;
-    font-size: 50px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  }
+    * {
+      font-family: 'Montserrat', sans-serif;
+    }
 
-  .form
-  {
-    color : white;
-    font-size: x-large;
-    font-family: sans-serif;
-    margin-left: 25%;
-  }
+    html {
+      min-width: 100%;
+      min-height: 100%;
+    }
 
-  .button
-  {
-    margin-left: 25%;
-    padding-top: 2%;
-    padding-bottom: 2%;
-    width: 20%;
-    border-radius: 40px;
-    background-color: #66ff00;
-    font-weight: 200;
-  }
-  .button:hover
-  {
-    background-color: red;
-  }
+    body {
+      margin: 0;
+      margin-top: -8vh;
+      padding-top: 3vh;
+    }
+
+    .main {
+      background: #FF512F;
+      /* fallback for old browsers */
+      background: -webkit-linear-gradient(to right, #DD2476, #FF512F);
+      /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to right, #DD2476, #FF512F);
+      /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    input {
+      margin-top: 2%;
+      margin-bottom: 7%;
+      padding: 2vh;
+      width: 70%;
+      background-color: black;
+      border: 0.2em solid white;
+      color: white;
+      opacity: 0.8;
+      border-radius: 50px;
+      box-shadow: 3px 3px 8px grey;
+      font-size: large;
+    }
+
+    .heading {
+      color: white;
+      text-shadow: 2px 2px 5px white;
+      text-align: center;
+      font-size: 50px;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+    .form {
+      color: white;
+      font-size: x-large;
+      font-family: sans-serif;
+      margin-left: 25%;
+    }
+
+    .button {
+      margin-left: 25%;
+      padding-top: 2%;
+      padding-bottom: 2%;
+      width: 20%;
+      border-radius: 40px;
+      background-color: #a862ea;
+
+      font-weight: 200;
+      transition: 0.6s all cubic-bezier(0.23, 1, 0.320, 1);
+      will-change: background-color;
+    }
+
+    .button:hover {
+      background-color: #6545a4;
+    }
   </style>
 </head>
+
 <body>
-  <h1 class="heading">Personality Prediction Project</h1> 
-  <form action="/submit" method="POST" class="form">
-    GENDER: <br>
-    <input type="text" name="gender" placeholder="Male/Female" required><br>
-    AGE: <br>
-    <input type="text" name="age" placeholder="Enter your age" required><br>
-    OPENNESS: <br>
-    <input type="text" name="openness" placeholder="Rate yourself from 1-8" required><br>
-    NEUROTICISM: <br>
-    <input type="text" name="neuroticism" placeholder="Rate yourself from 1-8" required><br>
-    CONSCIENTIOUSNESS: <br>
-    <input type="text" name="conscientiousness" placeholder="Rate yourself from 1-8" required><br>
-    AGREEABLENESS: <br>
-    <input type="text" name="agreeableness" placeholder="Rate yourself from 1-8" required><br>
-    EXTRAVERSION: <br>
-    <input type="text" name="extraversion" placeholder="Rate yourself from 1-8" required><br>
-    <input type="submit" name="submit" value="Predict" class="button">
-  </form>
+  <section class="main">
+    <h1 class="heading">Personality Prediction Project</h1>
+    <form action="/submit" method="POST" class="form">
+      AGE: <br>
+      <input type="text" name="age" placeholder="Enter your age" required><br>
+      OPENNESS: <br>
+      <input type="text" name="openness" placeholder="Rate yourself from 1-8" required><br>
+      NEUROTICISM: <br>
+      <input type="text" name="neuroticism" placeholder="Rate yourself from 1-8" required><br>
+      CONSCIENTIOUSNESS: <br>
+      <input type="text" name="conscientiousness" placeholder="Rate yourself from 1-8" required><br>
+      AGREEABLENESS: <br>
+      <input type="text" name="agreeableness" placeholder="Rate yourself from 1-8" required><br>
+      EXTRAVERSION: <br>
+      <input type="text" name="extraversion" placeholder="Rate yourself from 1-8" required><br>
+      Are YOU FEMALE?: <br>
+      <input type="text" name="isFemale" placeholder="Enter 1/0 for yes/no" required><br>
+      ARE YOU MALE?: <br>
+      <input type="text" name="isMale" placeholder="Enter 1/0 for yes/no" required><br>
+      <input type="submit" name="submit" value="Predict" class="button">
+    </form>
+  </section>
 </body>
+
 </html>

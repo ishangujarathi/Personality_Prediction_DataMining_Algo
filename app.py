@@ -15,22 +15,19 @@ def home():
 @app.route('/submit', methods=['POST', 'GET'])
 def result():
     if request.method == 'POST':
-        gender = request.form['gender']
-        if(gender == "Female"):
-            gender_no = 1
-        else:
-            gender_no = 2
         age = request.form['age']
         openness = request.form['openness']
         neuroticism = request.form['neuroticism']
         conscientiousness = request.form['conscientiousness']
         agreeableness = request.form['agreeableness']
         extraversion = request.form['extraversion']
-        result = np.array([gender_no, age, openness, neuroticism,
-                          conscientiousness, agreeableness, extraversion], ndmin=2)
+        female = request.form['isFemale']
+        male = request.form['isMale']
+        result = np.array([age, openness, neuroticism,
+                          conscientiousness, agreeableness, extraversion, female, male], ndmin=2)
         final = scaler.fit_transform(result)
         personality = str(model.predict(final))
-        return render_template("submit.html", answer=personality)
+        return render_template("submit.html", answer=personality.replace('[', '').replace(']', '').replace("'", ""))
 
 
 if __name__ == '__main__':
