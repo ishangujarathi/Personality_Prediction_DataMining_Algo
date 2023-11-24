@@ -1,7 +1,7 @@
 🧑 Personality Prediction Webapp 🧑
 ===================================
 
-A machine learning webapp built using Flask to predict a person's personality using logistic regression and display the results on a beautiful webapp.
+A machine learning webapp built using Django to predict a person's personality using logistic regression and display the results on a beautiful webapp.
 
 🚀 Features
 -----------
